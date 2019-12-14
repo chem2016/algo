@@ -18,8 +18,6 @@ class Solution:
         # BFS
         while(queue):
             currentWord = queue.popleft()
-            if currentWord in visited:
-                continue
             distance += 1
             print(currentWord, distance)
             if currentWord == end:
