@@ -28,6 +28,8 @@ class Solution:
         while stack:
             node, strr = stack.pop()
         
+            # [1->]
+            # [1->] https://www.youtube.com/watch?v=Zr_7qq2f16k
             if not node.left and not node.right:
                 res.append(strr + str(node.val))
             if node.left:
