@@ -11,8 +11,9 @@ class Solution:
         if len(candidates) == 0:
             return []
 
+        
         self.result = []
-        self.dfs(0, [], candidates, target)
+        self.dfs(0, [], sorted(list(set(candidates))), target) # remove duplicates
         
         return self.result
         
@@ -20,7 +21,7 @@ class Solution:
         if target < 0:
             return
         if target == 0:
-            self.result.append(list(combination))
+            return self.result.append(list(combination))
             
         for i in range(staring_index, len(candidates)):
             combination.append(candidates[i])
