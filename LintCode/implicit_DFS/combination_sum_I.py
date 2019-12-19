@@ -11,9 +11,8 @@ class Solution:
         if len(candidates) == 0:
             return []
 
-        
         self.result = []
-        self.dfs(0, [], sorted(list(set(candidates))), target) # remove duplicates
+        self.dfs(0, [], sorted(list(set(candidates))), target) # remove duplicates and sorted
         
         return self.result
         
@@ -25,5 +24,5 @@ class Solution:
             
         for i in range(staring_index, len(candidates)):
             combination.append(candidates[i])
-            self.dfs(i, combination, candidates, target - candidates[i])
+            self.dfs(i, combination, candidates, target - candidates[i]) # instead of using i+1 here use i, so we can have one element using multiple times
             combination.pop()
